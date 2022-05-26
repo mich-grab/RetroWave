@@ -22,31 +22,177 @@ body {
 
 }
 .sky {
+    position: relative;
     background-image: linear-gradient( #080038 0%, #0f0164 30%, #b700ff 100%);
     top: 0;
     height: 50%;
     z-index: -1;
 
 }
-
 .moon {
 
     width: 200px;
     height: 200px;
-    background-color: #b700ff;
+    background: linear-gradient(0deg, #ff004c 0%, #ff8800 100%);
     position: absolute;
     left: 50%;
     margin-left: -100px;
     top: 50%;
     margin-top: -150px;
     border-radius: 50%;
-    box-shadow: inset 0 0 1em #ff08ea, 0 0 1em #c533ff;;
+    box-shadow: inset 0 0 1em #ff08ea, 0 0 1em #c533ff;
 
 }
+
 .landscape {
+    position: absolute;
+
+    top: 50%;
+    margin-top: -230px;
+    width: 100%;
+    height: 300px;
+    background-color: #000;
+    clip-path: polygon(29% 68%, 34% 70%, 41% 68%, 46% 72%, 53% 70%, 61% 68%, 67% 69%, 71% 73%, 75% 69%, 80% 68%, 86% 69%, 91% 68%, 95% 71%, 100% 69%, 100% 100%, 0% 100%, 0% 70%, 9% 67%, 12% 72%, 18% 69%, 22% 74%, 27% 73%);
+    z-index: 100;
+    -webkit-box-shadow: inset 0 1px 0 -20px #ff00d4;
+    box-shadow: inset 0 1px 0 -20px #ff00d4;
+}
+
+
+.ground {
     position: relative;
     background-color: rgb(0, 0, 0);
     height: 50%;
     bottom: 0;
-    z-index: 999;
+    z-index: 100;
+    overflow: hidden;
+
+    -webkit-box-shadow: inset 0 30px 30px -20px #ff00d4;
+    box-shadow: inset 0 30px 30px -20px #ff00d4;
+}
+
+.horizontal-line {
+    visibility: none;
+    position: absolute;
+    background-color: #ff00d4;
+    width: 100%;
+    animation: 3s drive infinite cubic-bezier( 0.87, 0.13, 1, 0.51 );
+    box-shadow:  0 0 2px #c533ff;
+}
+
+
+.horizontal-line:nth-child(1) { animation-delay: 3s }
+.horizontal-line:nth-child(2) { animation-delay: 2.5s }
+.horizontal-line:nth-child(3) { animation-delay: 2s }
+.horizontal-line:nth-child(4) { animation-delay: 1.5s }
+.horizontal-line:nth-child(5) { animation-delay: 1s }
+.horizontal-line:nth-child(6) { animation-delay: 0.5s }
+.horizontal-line:nth-child(7) { animation-delay: 0s }
+
+.vertical-line {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #ff00d4;
+
+}
+.vertical-line:nth-child(8)  { transform: skewX(-59deg) translateX(-10vw) }
+.vertical-line:nth-child(9)  { transform: skewX(-54deg) translateX(0vw) }
+.vertical-line:nth-child(10)  { transform: skewX(-46deg) translateX(10vw) }
+.vertical-line:nth-child(11)  { transform: skewX(-36deg) translateX(20vw) }
+.vertical-line:nth-child(12)  { transform: skewX(-24deg) translateX(30vw) }
+.vertical-line:nth-child(13)  { transform: skewX(-12deg) translateX(40vw) }
+.vertical-line:nth-child(14)  { transform: skewX(0deg) translateX(50vw) }
+.vertical-line:nth-child(15)  { transform: skewX(12deg) translateX(60vw) }
+.vertical-line:nth-child(16)  { transform: skewX(24deg) translateX(70vw) }
+.vertical-line:nth-child(17)  { transform: skewX(36deg) translateX(80vw) }
+.vertical-line:nth-child(18)  { transform: skewX(46deg) translateX(90vw) }
+.vertical-line:nth-child(19)  { transform: skewX(54deg) translateX(100vw) }
+.vertical-line:nth-child(20)  { transform: skewX(59deg) translateX(110vw) }
+
+.logo {
+
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    
+    left: 50%;
+    margin-left: -150px;
+
+    top: 50%;
+    margin-top: -100px;
+    z-index: 101;
+    transform: rotateZ(-15deg);
+    
+    
+
+}
+.triangle{
+    background-color: #2600ff77;
+    width: 100%;
+    height: 100%;
+    z-index: 102;
+    clip-path: polygon(58% 0, 0 35%, 100% 100%);
+
+}
+.new-shadow {
+    position: absolute;
+    top: -23%;
+    left: 20%;
+    font-family: 'Audiowide', cursive;
+    font-size: 340%;
+
+    color: transparent;
+    -webkit-text-stroke: 4px #ff00ff;
+
+
+    transform: skewX(-20deg);
+    overflow: hidden;
+}
+.new {
+    position: absolute;
+    top: -23%;
+    left: 20%;
+    font-family: 'Audiowide', cursive;
+    font-size: 330%;
+    color: transparent;
+    -webkit-text-stroke: 1px #f7bdff;
+    transform: skewX(-20deg);
+    overflow: hidden;
+}
+
+.retro {
+    top: 5%;
+    left: 10%;
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 350%;
+    background: -webkit-linear-gradient(90deg, rgb(245, 127, 30) 0%, rgb(87, 87, 87) 45%, rgb(199, 239, 255) 50%, rgb(78, 75, 255) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: skewX(-20deg);
+}
+.wave {
+    top: 10%;
+    left: 50%;
+    position: absolute;
+    font-family: 'Smooch', cursive;
+    font-size: 400%;
+    color: #7700ff;
+    text-shadow: 3px 3px 0 #ff00ff;
+    transform: skewX(-20deg);
+}
+
+
+
+@keyframes drive {
+    0%{
+        top: 0;
+        height: 0px;
+
+    }
+    100%{
+        top: 100%;
+        height: 4px;
+    }
 }
