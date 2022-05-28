@@ -10,18 +10,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    overflow: hidden;
     margin:0;
 }
 .scene {
     position: absolute;
     top: 0;
     width: 100vw;
-    height: 40%;
+    height: 30%;
 
 }
-.sky {
+.scene__sky {
     position: relative;
     background-image: linear-gradient( #080038 0%, #0f0164 30%, #b700ff 100%);
     top: 0;
@@ -29,10 +27,10 @@ body {
     z-index: -1;
 
 }
-.moon {
+.scene__moon {
 
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     background: linear-gradient(0deg, #ff004c 0%, #ff8800 100%);
     position: absolute;
     left: 50%;
@@ -44,7 +42,7 @@ body {
 
 }
 
-.landscape {
+.scene__landscape {
     position: absolute;
 
     top: 50%;
@@ -59,7 +57,7 @@ body {
 }
 
 
-.ground {
+.scene__ground {
     position: relative;
     background-color: rgb(0, 0, 0);
     height: 50%;
@@ -76,7 +74,7 @@ body {
     position: absolute;
     background-color: #ff00d4;
     width: 100%;
-    animation: 3s drive infinite cubic-bezier( 0.87, 0.13, 1, 0.51 );
+    animation: 3s move-line-down infinite cubic-bezier( 0.87, 0.13, 1, 0.51 );
     box-shadow:  0 0 2px #c533ff;
 }
 
@@ -110,7 +108,7 @@ body {
 .vertical-line:nth-child(19)  { transform: skewX(54deg) translateX(100vw) }
 .vertical-line:nth-child(20)  { transform: skewX(59deg) translateX(110vw) }
 
-.logo {
+.scene__logo {
 
     position: absolute;
     width: 300px;
@@ -140,23 +138,24 @@ body {
     top: -23%;
     left: 20%;
     font-family: 'Audiowide', cursive;
+    font-weight: 800;
+    font-style: normal;
     font-size: 340%;
-
     color: transparent;
-    -webkit-text-stroke: 4px #ff00ff;
-
-
     transform: skewX(-20deg);
     overflow: hidden;
+    animation: 3s glow-neon infinite ease-in-out;
 }
 .new {
     position: absolute;
     top: -23%;
     left: 20%;
     font-family: 'Audiowide', cursive;
+    font-weight: 800;
+    font-style: normal;
     font-size: 330%;
     color: transparent;
-    -webkit-text-stroke: 1px #f7bdff;
+    -webkit-text-stroke: 1px #fad1ff;
     transform: skewX(-20deg);
     overflow: hidden;
 }
@@ -183,9 +182,29 @@ body {
     transform: skewX(-20deg);
 }
 
+@keyframes glow-neon {
+    0%{
+        opacity: 1;
+        -webkit-text-stroke: 3px #ff00ff;
+    }
+    25%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+        -webkit-text-stroke: 3px #00e1ff77;
+    }
+    75%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        -webkit-text-stroke: 3px #ff00ff;
+    }
+    
+}
 
-
-@keyframes drive {
+@keyframes move-line-down {
     0%{
         top: 0;
         height: 0px;
