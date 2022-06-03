@@ -7,7 +7,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin:0;
@@ -15,6 +15,7 @@ body {
 .scene {
     position: absolute;
     top: 0;
+    left: 0;
     width: 100vw;
     height: 30%;
 
@@ -24,7 +25,7 @@ body {
     background-image: linear-gradient( #080038 0%, #0f0164 30%, #b700ff 100%);
     top: 0;
     height: 50%;
-    z-index: -1;
+    z-index: 2;
 
 }
 .scene__moon {
@@ -109,22 +110,17 @@ body {
 .vertical-line:nth-child(20)  { transform: skewX(59deg) translateX(110vw) }
 
 .scene__logo {
-
     position: absolute;
     width: 300px;
-    height: 200px;
-    
+    height: 200px;   
     left: 50%;
     margin-left: -150px;
-
     top: 50%;
     margin-top: -100px;
     z-index: 101;
     transform: rotateZ(-15deg);
-    
-    
-
 }
+
 .triangle{
     background-color: #2600ff77;
     width: 100%;
@@ -133,6 +129,7 @@ body {
     clip-path: polygon(58% 0, 0 35%, 100% 100%);
 
 }
+
 .new-shadow {
     position: absolute;
     top: -23%;
@@ -146,6 +143,7 @@ body {
     overflow: hidden;
     animation: 3s glow-neon infinite ease-in-out;
 }
+
 .new {
     position: absolute;
     top: -23%;
@@ -181,6 +179,38 @@ body {
     text-shadow: 3px 3px 0 #ff00ff;
     transform: skewX(-20deg);
 }
+
+.container {
+    background-color: #000000;
+    position: relative;
+    display: flex;
+
+    justify-content: center;
+    margin-top: 28vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+    .container-box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: #1d1d1d;
+        width: 400px;
+        height: 400px;
+        margin-top: 40px;
+    }
+        .box {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ff00ff;
+            transition: 1s ease;
+        }
+        
+        .box:hover {
+            transition-duration: 0s;
+        }
 
 @keyframes glow-neon {
     0%{
